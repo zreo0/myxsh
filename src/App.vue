@@ -1,13 +1,34 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <p>
+      <router-link to="/page1/helloWorld">Go to page1</router-link>
+      <router-link to="/page2">Go to page2</router-link>
+      <router-link to="/page1/aha/profile">Go to page1-profile</router-link>
+      <router-link to="/page1/ahaha/posts">Go to page1-post</router-link>
+      <button v-on:click="goNext">Next</button>
+      <button v-on:click="goForward">Forward</button>
+    </p>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data (){
+    return {
+
+    }
+  },
+  methods: {
+    goNext() {
+      this.$router.push({path: '/page1/:id', params: {id: 12}});
+    },
+    goForward() {
+      this.$router.go(1);
+    }
+  }
 }
 </script>
 
