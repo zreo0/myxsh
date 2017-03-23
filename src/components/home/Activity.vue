@@ -1,12 +1,7 @@
 <template>
-  <transition name="slide">
-    <div class="hello">
-      <h1>{{ msg }}</h1>
-      <h2>{{ userName }}</h2>
-      <h2>fullPath:{{$route.fullPath}}</h2>
-      <router-view></router-view>
-    </div>
-  </transition>
+  <div class="act-container">
+    <h1>{{ msg }}</h1>
+  </div>
 </template>
 
 <script>
@@ -14,8 +9,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to page1',
-      userName: this.$route.params.id
+      msg: 'Welcome to home-act'
     }
   }
 }
